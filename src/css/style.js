@@ -14,6 +14,13 @@ h1 {
     color: rgb(166, 247, 80);
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;

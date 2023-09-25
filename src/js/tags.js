@@ -31,6 +31,7 @@ inputHomem.setAttribute("type", "number");
 inputHomem.setAttribute("id", "homem");
 inputHomem.setAttribute("value", "0");
 inputHomem.classList.add("input-valid");
+inputHomem.readOnly = true;
 // DIV BOTÕES + E - HOMEM
 const buttonGroupHomem = document.createElement("div");
 buttonGroupHomem.classList.add("button-group");
@@ -57,6 +58,7 @@ inputMulher.setAttribute("type", "number");
 inputMulher.setAttribute("id", "mulher");
 inputMulher.setAttribute("value", "0");
 inputMulher.classList.add("input-valid");
+inputMulher.readOnly = true;
 // DIV BOTÕES + E - MULHER
 const buttonGroupMulher = document.createElement("div");
 buttonGroupMulher.classList.add("button-group");
@@ -83,6 +85,7 @@ inputCrianca.setAttribute("type", "number");
 inputCrianca.setAttribute("id", "crianca");
 inputCrianca.setAttribute("value", "0");
 inputCrianca.classList.add("input-valid");
+inputCrianca.readOnly = true;
 // DIV BOTÕES + E - CRIANÇA
 const buttonGroupCrianca = document.createElement("div");
 buttonGroupCrianca.classList.add("button-group");
