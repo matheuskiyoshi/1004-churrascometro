@@ -1,3 +1,5 @@
+import { atualizarLocalStorage } from "./salvarECarregar.js";
+
 const events = {
     DECREMENTAR_HOMEM: "DECREMENTAR_HOMEM_EVENTO",
     DECREMENTAR_MULHER: "DECREMENTAR_MULHER_EVENTO",
@@ -12,6 +14,7 @@ const buttonMinusHomem = document.getElementsByClassName("input-group__button--s
 buttonMinusHomem.addEventListener("click", () => {
     console.log("DISPARADO: " + events.DECREMENTAR_HOMEM);
     buttonMinusHomem.dispatchEvent(new CustomEvent(events.DECREMENTAR_HOMEM, { bubbles: true }));
+    atualizarLocalStorage();
 });
 
 calculator.addEventListener(events.DECREMENTAR_HOMEM, () => {
@@ -28,6 +31,7 @@ const buttonMinusMulher = document.getElementsByClassName("input-group__button--
 buttonMinusMulher.addEventListener("click", () => {
     console.log("DISPARADO: " + events.DECREMENTAR_MULHER);
     buttonMinusMulher.dispatchEvent(new CustomEvent(events.DECREMENTAR_MULHER, { bubbles: true }));
+    atualizarLocalStorage();
 });
 
 calculator.addEventListener(events.DECREMENTAR_MULHER, () => {
@@ -44,6 +48,7 @@ const buttonMinusCrianca = document.getElementsByClassName("input-group__button-
 buttonMinusCrianca.addEventListener("click", () => {
     console.log("DISPARADO: " + events.DECREMENTAR_CRIANCA);
     buttonMinusCrianca.dispatchEvent(new CustomEvent(events.DECREMENTAR_CRIANCA, { bubbles: true }));
+    atualizarLocalStorage();
 });
 
 calculator.addEventListener(events.DECREMENTAR_CRIANCA, () => {
