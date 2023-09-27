@@ -1,17 +1,22 @@
 const styleContent = `
+:root {
+    --color-dark-mode: rgb(166, 247, 80);
+
+}
+
 body {
-    background-image: url(./assets/background.jpg); 
+    background-image: url(./assets/background-light.jpg); 
     font-family: "Fira Code", monospace;
     margin: 0;
     padding: 0;
-    /* background-image: url('./background.jpg'); */
     background-color: #181C23;
 }
 
 h1 {
     font-size: 54px;
     font-weight: 300;
-    color: rgb(166, 247, 80);
+    color: var(--color-dark-mode);
+    text-shadow: 2px 2px #000;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -25,7 +30,6 @@ input[type="number"]::-webkit-outer-spin-button {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: 181C23;
     border-radius: 10px;
     text-align: center;
 }
@@ -53,10 +57,11 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 0px;
     width: 160px;
     padding: 0 6px 0 6px;
-    background-color: #181C23;
-    color: rgb(166, 247, 80);
+    color: var(--color-dark-mode);
     border-width: 1px;
     border-style: solid;
+    box-shadow: 1px 1px #000;
+    background: transparent;
 }
 
 .input-group label {
@@ -67,17 +72,19 @@ input[type="number"]::-webkit-outer-spin-button {
     -moz-border-radius-topright: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: #181C23;
     line-height: 50px;
     font-size: 18px;
     font-family: 'Foco-Regular';
     margin-bottom: 0;
     height: 50px;
     width: 100%;
-    color: rgb(166, 247, 80);
+    color: var(--color-dark-mode);
+    text-shadow: 1.5px 1px #000;
     border-width: 1px;
     border-style: solid;
+    box-shadow: 0px 1px #000;
     padding: 0 5px 0 5px;
+    background: transparent;
 }
 
 .input-group input[type="number"] {
@@ -85,7 +92,6 @@ input[type="number"]::-webkit-outer-spin-button {
     text-align: center;
     height: 80px;
     border: 0px;
-    background-color: #181C23;
     font-weight: bold;
     font-size: 36px;
     text-align: center
@@ -100,7 +106,9 @@ input[type="number"]::-webkit-outer-spin-button {
     border-color: rgb(233, 64, 64);
 }
 .input-valid {
-    color: rgb(166, 247, 80);
+    color: var(--color-dark-mode);
+    text-shadow: 2px 1px #000;
+    background: transparent;
 }
 
 .input-group .button-group {
@@ -114,6 +122,7 @@ input[type="number"]::-webkit-outer-spin-button {
     font-size: 16px;
     margin: 5px;
     cursor: pointer;
+    
 }
 
 .input-group__button--small{
@@ -121,7 +130,8 @@ input[type="number"]::-webkit-outer-spin-button {
     border: none;
     text-decoration: none;
     outline: none;
-    background-color: rgb(166, 247, 80);
+    background-color: var(--color-dark-mode);
+    box-shadow: 2px 2px #000;
     color: #181C23;
     font-size: 34px;
     font-weight: bold;
@@ -136,8 +146,9 @@ input[type="number"]::-webkit-outer-spin-button {
     border: none;
     text-decoration: none;
     outline: none;
-    background-color: #181C23;
-    color: rgb(166, 247, 80);
+    background: transparent;
+    color: var(--color-dark-mode);
+    text-shadow: 1.5px 1px #000;
     font-size: 34px;
     font-weight: bold;
     height: 30px;

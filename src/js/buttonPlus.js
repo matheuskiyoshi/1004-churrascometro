@@ -1,4 +1,4 @@
-import { atualizarLocalStorage } from "./salvarECarregar.js";
+import { atualizarSessionStorage } from "./sessionStorage.js";
 
 const events = {
     INCREMENTAR_HOMEM: "INCREMENTAR_HOMEM_EVENTO",
@@ -14,7 +14,7 @@ const buttonPlusHomem = document.getElementsByClassName("input-group__button--sm
 buttonPlusHomem.addEventListener("click", () => {
     console.log("DISPARADO: " + events.INCREMENTAR_HOMEM);
     buttonPlusHomem.dispatchEvent(new CustomEvent(events.INCREMENTAR_HOMEM, { bubbles: true }));
-    atualizarLocalStorage();
+    atualizarSessionStorage();
 });
 
 calculator.addEventListener(events.INCREMENTAR_HOMEM, () => {
@@ -28,7 +28,7 @@ const buttonPlusMulher = document.getElementsByClassName("input-group__button--s
 buttonPlusMulher.addEventListener("click", () => {
     console.log("DISPARADO: " + events.INCREMENTAR_MULHER);
     buttonPlusMulher.dispatchEvent(new CustomEvent(events.INCREMENTAR_MULHER, { bubbles: true }));
-    atualizarLocalStorage();
+    atualizarSessionStorage();
 });
 
 calculator.addEventListener(events.INCREMENTAR_MULHER, () => {
@@ -42,7 +42,7 @@ const buttonPlusCrianca = document.getElementsByClassName("input-group__button--
 buttonPlusCrianca.addEventListener("click", () => {
     console.log("DISPARADO: " + events.INCREMENTAR_CRIANCA);
     buttonPlusCrianca.dispatchEvent(new CustomEvent(events.INCREMENTAR_CRIANCA, { bubbles: true }));
-    atualizarLocalStorage();
+    atualizarSessionStorage();
 });
 
 calculator.addEventListener(events.INCREMENTAR_CRIANCA, () => {
