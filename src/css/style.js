@@ -1,11 +1,17 @@
 const styleContent = `
 :root {
     --color-dark-mode: rgb(166, 247, 80);
+}
 
+.noite{
+    background-image: url(./assets/background-dark.jpg); 
+}
+
+.dia{
+    background-image: url(./assets/background-light.jpg); 
 }
 
 body {
-    background-image: url(./assets/background-light.jpg); 
     font-family: "Fira Code", monospace;
     margin: 0;
     padding: 0;
@@ -155,6 +161,20 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 0px;
     margin: 10px 5px 0px 5px;
     width: 100%;
+}
+
+#tema-button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 4px;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: var(--color-dark-mode);
+    color: var(--color-dark-mode);
+    text-shadow: 1.5px 1px #000;
+    background: transparent;
+    box-shadow: 1px 1px #000;
 }
 `
 

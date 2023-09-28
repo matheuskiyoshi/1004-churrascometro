@@ -1,6 +1,8 @@
 // ARQUIVO PARA A CRIAÇÃO DAS TAGS HTML, DOS ATRIBUTOS E DO ANINHAMENTO
 
 const body = document.querySelector("body");
+body.classList.add("noite");
+
 const style = document.createElement("style");
 document.head.appendChild(style);
 const app = document.querySelector("app");
@@ -11,6 +13,10 @@ container.classList.add("container");
 const h1 = document.createElement("h1");
 h1.innerText = "Churrascômetro";
 
+// BOTÃO DE TEMA
+const temaButton = document.createElement("button");
+temaButton.setAttribute("id","tema-button");
+temaButton.innerText = "Tema";
 
 const calculator = document.createElement("div");
 calculator.classList.add("calculator");
@@ -145,3 +151,4 @@ calculateRow.appendChild(divCalculate);
 divCalculate.append(buttonCalculate);
 
 app.appendChild(container);
+app.appendChild(temaButton);
