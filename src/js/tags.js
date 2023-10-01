@@ -8,10 +8,110 @@ document.head.appendChild(style);
 const app = document.querySelector("app");
 
 const container = document.createElement("div");
-container.classList.add("container");
+container.setAttribute("id", "container");
+
+const containerCalculadora = document.createElement("div");
+containerCalculadora.classList.add("container-calculator");
 
 const h1 = document.createElement("h1");
 h1.innerText = "Churrascômetro";
+
+// TABELA DE RESULTADOS
+const containerResumo = document.createElement("div");
+containerResumo.classList.add("container-resumo");
+
+const tituloResumoChurras = document.createElement("h2");
+tituloResumoChurras.innerText = "Resumo do Churrasco";
+
+// TABELA - PESSOAS
+const tablePessoas = document.createElement("table");
+const tbodyPessoas = document.createElement("tbody");
+const trPessoas = document.createElement("tr");
+const tdPessoas = document.createElement("td");
+tdPessoas.innerHTML = "<b>Pessoas</b>";
+
+const trHomem = document.createElement("tr");
+const trMulher = document.createElement("tr");
+const trCrianca = document.createElement("tr");
+const tdHomem = document.createElement("td");
+const tdMulher = document.createElement("td");
+const tdCrianca = document.createElement("td");
+const tdValorHomem = document.createElement("td");
+const tdValorMulher = document.createElement("td");
+const tdValorCrianca = document.createElement("td");
+const quantidadeHomem = document.createElement("span");
+const quantidadeMulher = document.createElement("span");
+const quantidadeCrianca = document.createElement("span");
+tdHomem.innerText = "Homem";
+tdMulher.innerText = "Mulher";
+tdCrianca.innerText = "Criança";
+quantidadeHomem.innerText = "0";
+quantidadeMulher.innerText = "0";
+quantidadeCrianca.innerText = "0";
+quantidadeHomem.setAttribute("id","quantidadeHomem");
+quantidadeMulher.setAttribute("id","quantidadeMulher");
+quantidadeCrianca.setAttribute("id","quantidadeCrianca");
+
+// TABELA - CARNES
+const tableCarnes = document.createElement("table");
+const tbodyCarnes = document.createElement("tbody");
+const trCarnes = document.createElement("tr");
+const tdCarnes = document.createElement("td");
+tdCarnes.innerHTML = "<b>Carnes</b>";
+
+const trPicanha = document.createElement("tr");
+const trAlcatra = document.createElement("tr");
+const trMaminha = document.createElement("tr");
+const trCupim = document.createElement("tr");
+const trLinguica = document.createElement("tr");
+const trFrango = document.createElement("tr");
+const trCostela = document.createElement("tr");
+const trCoracao = document.createElement("tr");
+
+const tdPicanha = document.createElement("td");
+const tdAlcatra = document.createElement("td");
+const tdMaminha = document.createElement("td");
+const tdCupim = document.createElement("td");
+const tdLinguica = document.createElement("td");
+const tdFrango = document.createElement("td");
+const tdCostela = document.createElement("td");
+const tdCoracao = document.createElement("td");
+
+const quantidadePicanha = document.createElement("span");
+const quantidadeAlcatra = document.createElement("span");
+const quantidadeMaminha = document.createElement("span");
+const quantidadeCupim = document.createElement("span");
+const quantidadeLinguica = document.createElement("span");
+const quantidadeFrango = document.createElement("span");
+const quantidadeCostela = document.createElement("span");
+const quantidadeCoracao = document.createElement("span");
+
+tdPicanha.innerText = "Picanha";
+tdAlcatra.innerText = "Alcatra";
+tdMaminha.innerText = "Maminha";
+tdCupim.innerText = "Cupim";
+tdLinguica.innerText = "Linguiça";
+tdFrango.innerText = "Frango (sobrecoxa e asa)";
+tdCostela.innerText = "Costela";
+tdCoracao.innerText = "Coração de Frango";
+
+quantidadePicanha.innerText = "...";
+quantidadeAlcatra.innerText = "...";
+quantidadeMaminha.innerText = "...";
+quantidadeCupim.innerText = "...";
+quantidadeLinguica.innerText = "...";
+quantidadeFrango.innerText = "...";
+quantidadeCostela.innerText = "...";
+quantidadeCoracao.innerText = "...";
+
+quantidadePicanha.setAttribute("id", "quantidadePicanha");
+quantidadeAlcatra.setAttribute("id", "quantidadeAlcatra");
+quantidadeMaminha.setAttribute("id", "quantidadeMaminha");
+quantidadeCupim.setAttribute("id", "quantidadeCupim");
+quantidadeLinguica.setAttribute("id", "quantidadeLinguica");
+quantidadeFrango.setAttribute("id", "quantidadeFrango");
+quantidadeCostela.setAttribute("id", "quantidadeCostela");
+quantidadeCoracao.setAttribute("id", "quantidadeCoracao");
 
 // BOTÃO DE TEMA
 const temaButton = document.createElement("button");
@@ -118,8 +218,7 @@ buttonCalculate.innerText = "Calcular";
 // DIV CALCULATE
 
 //ANINHAMENTO
-container.appendChild(h1);
-container.appendChild(calculator);
+containerCalculadora.appendChild(calculator);
 
 calculator.appendChild(firstRow);
 firstRow.appendChild(firstInputGroup);
@@ -150,5 +249,62 @@ calculator.appendChild(calculateRow);
 calculateRow.appendChild(divCalculate);
 divCalculate.append(buttonCalculate);
 
+containerResumo.appendChild(tituloResumoChurras);
+containerResumo.appendChild(tablePessoas);
+containerResumo.appendChild(tableCarnes);
+
+// PRIMEIRA TABELA - PESSOAS
+tablePessoas.appendChild(tbodyPessoas);
+tbodyPessoas.appendChild(trPessoas);
+tbodyPessoas.appendChild(trHomem);
+tbodyPessoas.appendChild(trMulher);
+tbodyPessoas.appendChild(trCrianca);
+trPessoas.appendChild(tdPessoas);
+trHomem.appendChild(tdHomem);
+trMulher.appendChild(tdMulher);
+trCrianca.appendChild(tdCrianca);
+trHomem.appendChild(tdValorHomem);
+trMulher.appendChild(tdValorMulher);
+trCrianca.appendChild(tdValorCrianca);
+tdValorHomem.appendChild(quantidadeHomem);
+tdValorMulher.appendChild(quantidadeMulher);
+tdValorCrianca.appendChild(quantidadeCrianca);
+
+// SEGUNDA TABELA - CARNES
+tableCarnes.appendChild(tbodyCarnes);
+
+tbodyCarnes.appendChild(trCarnes);
+tbodyCarnes.appendChild(trPicanha);
+tbodyCarnes.appendChild(trAlcatra);
+tbodyCarnes.appendChild(trMaminha);
+tbodyCarnes.appendChild(trCupim);
+tbodyCarnes.appendChild(trLinguica);
+tbodyCarnes.appendChild(trFrango);
+tbodyCarnes.appendChild(trCostela);
+tbodyCarnes.appendChild(trCoracao);
+
+trCarnes.appendChild(tdCarnes);
+trPicanha.appendChild(tdPicanha);
+trPicanha.appendChild(quantidadePicanha);
+trAlcatra.appendChild(tdAlcatra);
+trAlcatra.appendChild(quantidadeAlcatra);
+trMaminha.appendChild(tdMaminha);
+trMaminha.appendChild(quantidadeMaminha);
+trCupim.appendChild(tdCupim);
+trCupim.appendChild(quantidadeCupim);
+trLinguica.appendChild(tdLinguica);
+trLinguica.appendChild(quantidadeLinguica);
+trFrango.appendChild(tdFrango);
+trFrango.appendChild(quantidadeFrango);
+trCostela.appendChild(tdCostela);
+trCostela.appendChild(quantidadeCostela);
+trCoracao.appendChild(tdCoracao);
+trCoracao.appendChild(quantidadeCoracao);
+
+
+container.appendChild(containerCalculadora);
+container.appendChild(containerResumo);
+
+app.appendChild(h1);
 app.appendChild(container);
 app.appendChild(temaButton);

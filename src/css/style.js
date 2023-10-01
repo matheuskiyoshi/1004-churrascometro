@@ -23,6 +23,23 @@ h1 {
     font-weight: 300;
     color: var(--color-dark-mode);
     text-shadow: 2px 2px #000;
+    text-align: center;
+}
+
+h2 {
+    color: var(--color-dark-mode);
+    text-shadow: 2px 2px #000;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+table {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+tr > td:first-child {
+    width: 300px;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -32,12 +49,26 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-.container {
+#container {
+    display: flex;
+}
+
+.container-calculator {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+}
+
+.container-resumo {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 0px 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: grey; //#DCDCDC
 }
 
 .row {
@@ -175,6 +206,7 @@ input[type="number"]::-webkit-outer-spin-button {
     text-shadow: 1.5px 1px #000;
     background: transparent;
     box-shadow: 1px 1px #000;
+    cursor: pointer;
 }
 `
 
