@@ -209,6 +209,7 @@ input[type="number"]::-webkit-outer-spin-button {
     cursor: pointer;
 }
 `
-
-const styleTag = document.querySelector("style");
-styleTag.textContent = styleContent;
+const style = document.createElement("style");
+      style.textContent = styleContent;
+     
+      document.head.appendChild(style);
