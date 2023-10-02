@@ -57,3 +57,11 @@ const dadosTabela3 = [
     { nome: 'Água 1L', quantidadeInicial: '...' },
     { nome: 'Gelo 5kg', quantidadeInicial: '...' },
 ];
+
+const dadosTabela4 = [
+    { nome: 'Acompanhamentos' },
+    { nome: 'Pão de Alho', quantidadeInicial: '...' },
+    { nome: 'Farofa', quantidadeInicial: '...' },
+    { nome: 'Maionese', quantidadeInicial: '...' },
+    { nome: 'Vinagrete', quantidadeInicial: '...' },
+];

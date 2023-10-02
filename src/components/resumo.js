@@ -7,6 +7,7 @@ const resumo = function () {
     containerResumo.appendChild(tabela(dadosTabela1));
     containerResumo.appendChild(tabela(dadosTabela2));
     containerResumo.appendChild(tabela(dadosTabela3));
+    containerResumo.appendChild(tabela(dadosTabela4));
     
     return containerResumo;
 }

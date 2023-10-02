@@ -4,6 +4,9 @@ app.appendChild(title());
 app.appendChild(container());
 app.appendChild(theme());
 
+const body = document.querySelector("body");
+body.appendChild(footer());
+
 let imagemAtual = 'noite';
 
 app.addEventListener(events.MUDAR_TEMA, () => {

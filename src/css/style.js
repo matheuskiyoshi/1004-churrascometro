@@ -13,17 +13,27 @@ const styleContent = `
 
 body {
     font-family: "Fira Code", monospace;
-    margin: 0;
+    margin-bottom: 200px;
     padding: 0;
     background-color: #181C23;
 }
 
+footer {
+    margin-top: 20px;
+    background-color: black;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
 h1 {
-    font-size: 54px;
+    font-size: 74px;
     font-weight: 300;
     color: var(--color-dark-mode);
     text-shadow: 2px 2px #000;
     text-align: center;
+    margin-bottom: 50px;
 }
 
 h2 {
@@ -36,6 +46,10 @@ h2 {
 table {
     text-align: left;
     margin-bottom: 20px;
+}
+
+form {
+    text-align: center;
 }
 
 tr > td:first-child {
@@ -130,7 +144,7 @@ input[type="number"]::-webkit-outer-spin-button {
     height: 80px;
     border: 0px;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 60px;
     text-align: center
 }
 .input-group input[type="number"]:focus {
@@ -195,6 +209,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 #tema-button{
+    font-size: 20px;
     position: absolute;
     right: 10px;
     top: 10px;
@@ -208,6 +223,34 @@ input[type="number"]::-webkit-outer-spin-button {
     box-shadow: 1px 1px #000;
     cursor: pointer;
 }
+
+#consent-input {
+    text-align: center;
+}
+
+#consent-input .input-group {
+    display:inline-block;
+}
+
+#consent-label {
+    color: var(--color-dark-mode);
+}
+
+.input-form {
+    color: rgb(166, 247, 80);
+    width: 300px;
+    text-align: center;
+    height: 50px;
+    border: 0px;
+    background-color: #181C23;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+}
+
 `
 const style = document.createElement("style");
       style.textContent = styleContent;
