@@ -50,17 +50,31 @@ const footer = function (){
       divConsentInput.appendChild(registerButton());
 
       footer.addEventListener(events.REGISTER, function(){
-        
-        const customer = {
-            name: nameInput.value,
-            email: emailInput.value,
-            city: cityInput.value
-        };
-
-        localStorage.setItem(customer.email, JSON.stringify(customer));
-        
-      });
-    
-
+            const name = nameInput.value;
+            const email = emailInput.value;
+            const city = cityInput.value;
+            const consentChecked = consentInput.checked;
+          
+            if (name.trim() === '' || city.trim() === '' || !consentChecked) {
+              alert('Por favor, preencha todos os campos obrigatórios e marque a caixa de consentimento.');
+              return; 
+            }
+          
+            if (!/\S+@\S+\.\S+/.test(email)) {
+              alert('Por favor, insira um endereço de e-mail válido.');
+              return;
+            }
+          
+            const customer = {
+              name: name,
+              email: email,
+              city: city
+            };
+          
+            localStorage.setItem('customer', JSON.stringify(customer));
+          
+            footer.style.display = 'none';
+          });
+          
       return footer;
 }

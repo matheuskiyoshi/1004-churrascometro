@@ -37,5 +37,11 @@ function carregarValoresDoLocalStorage() {
         document.body.classList.add('noite');
         imagemAtual = 'noite';
     }
+
+    const customerData = localStorage.getItem('customer');
+    if(customerData){
+        const footer = document.querySelector('footer');
+        footer.style.display = 'none';
+    }
 }
 carregarValoresDoLocalStorage();
