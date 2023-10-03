@@ -18,7 +18,7 @@ const tabela = function (data) {
 
         const tdQuantidade = document.createElement("td");
         const spanQuantidade = document.createElement("span");
-              spanQuantidade.setAttribute("id", "quantidadeDe" + data[i].nome);
+              spanQuantidade.setAttribute("id", data[i].id + "Quantidade");
               spanQuantidade.innerText = data[i].quantidadeInicial;
 
         trElemento.appendChild(tdElemento);
@@ -29,39 +29,3 @@ const tabela = function (data) {
 
     return table;
 }
-
-const dadosTabela1 = [
-    { nome: 'Pessoas'},
-    { nome: 'Homem', quantidadeInicial: '0' },
-    { nome: 'Mulher', quantidadeInicial: '0' },
-    { nome: 'Criança', quantidadeInicial: '0' },
-];
-
-const dadosTabela2 = [
-    { nome: 'Carnes' },
-    { nome: 'Picanha', quantidadeInicial: '...' },
-    { nome: 'Alcatra', quantidadeInicial: '...' },
-    { nome: 'Maminha', quantidadeInicial: '...' },
-    { nome: 'Cupim', quantidadeInicial: '...' },
-    { nome: 'Linguiça', quantidadeInicial: '...' },
-    { nome: 'Frango (sobrecoxa e asa)', quantidadeInicial: '...' },
-    { nome: 'Costela', quantidadeInicial: '...' },
-    { nome: 'Coração de Frango', quantidadeInicial: '...' },
-];
-
-const dadosTabela3 = [
-    { nome: 'Bebidas' },
-    { nome: 'Refrigerante 2L', quantidadeInicial: '...' },
-    { nome: 'Refrigerante (Lata)', quantidadeInicial: '...' },
-    { nome: 'Cerveja (600ml)', quantidadeInicial: '...' },
-    { nome: 'Água 1L', quantidadeInicial: '...' },
-    { nome: 'Gelo 5kg', quantidadeInicial: '...' },
-];
-
-const dadosTabela4 = [
-    { nome: 'Acompanhamentos' },
-    { nome: 'Pão de Alho', quantidadeInicial: '...' },
-    { nome: 'Farofa', quantidadeInicial: '...' },
-    { nome: 'Maionese', quantidadeInicial: '...' },
-    { nome: 'Vinagrete', quantidadeInicial: '...' },
-];

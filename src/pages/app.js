@@ -7,6 +7,11 @@ app.appendChild(theme());
 const body = document.querySelector("body");
 body.appendChild(footer());
 
+const containerCalculadora = document.querySelector(".container-calculator");
+containerCalculadora.appendChild(items(dadosCarnes));
+containerCalculadora.appendChild(items(dadosBebidas));
+containerCalculadora.appendChild(items(dadosAcompanhamentos));
+
 let imagemAtual = 'noite';
 
 app.addEventListener(events.MUDAR_TEMA, () => {

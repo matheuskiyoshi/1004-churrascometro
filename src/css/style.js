@@ -19,6 +19,7 @@ body {
 }
 
 footer {
+    padding: 10px 0;
     margin-top: 20px;
     background-color: black;
     position: fixed;
@@ -83,6 +84,10 @@ input[type="number"]::-webkit-outer-spin-button {
     border-radius: 10px;
     text-align: center;
     background-color: grey; //#DCDCDC
+}
+
+.container-items{
+    margin-top: 50px;
 }
 
 .row {
@@ -237,7 +242,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .input-form {
-    color: rgb(166, 247, 80);
+    color: var(--color-dark-mode);
     width: 300px;
     text-align: center;
     height: 50px;
@@ -251,6 +256,53 @@ input[type="number"]::-webkit-outer-spin-button {
     border-radius: 10px;
 }
 
+ul{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+li{
+    position: relative;
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+ul li input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+ul li label{
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-dark-mode);
+    display: block;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    transition: 0.2s all;
+    cursor: pointer;
+}
+
+ul li input:checked ~ label{
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    background: var(--color-dark-mode);
+    border-color: var(--color-dark-mode);
+    transition: 0.2s all;
+}
 `
 const style = document.createElement("style");
       style.textContent = styleContent;

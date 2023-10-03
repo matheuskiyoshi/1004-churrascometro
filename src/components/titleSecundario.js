@@ -1,7 +1,7 @@
-const titleResumo = function () {
+const titleSecundario = function (titulo) {
 
     const tituloResumoChurras = document.createElement("h2");
-          tituloResumoChurras.innerText = "Resumo do Churrasco";
+          tituloResumoChurras.innerText = titulo;
     
     return tituloResumoChurras;
 }
