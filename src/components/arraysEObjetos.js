@@ -23,17 +23,19 @@ const dadosBebidas = [
     { nome: 'Bebidas' },
     { nome: 'Refrigerante 2L', id: 'refrigerante', quantidadeInicial: '...' },
     { nome: 'Refrigerante (Lata)', id: 'lata', quantidadeInicial: '...' },
+    { nome: 'Suco 1L', id: 'suco', quantidadeInicial: '...' },
     { nome: 'Cerveja (600ml)', id: 'cerveja', quantidadeInicial: '...' },
     { nome: 'Água 1L', id: 'agua', quantidadeInicial: '...' },
     { nome: 'Gelo 5kg', id: 'gelo', quantidadeInicial: '...' },
 ];
 
 const dadosAcompanhamentos = [
-    { nome: 'Acompanhamentos' },
+    { nome: 'Acompanhamentos - Porção de 100g' },
     { nome: 'Pão de Alho', id: 'pao', quantidadeInicial: '...' },
     { nome: 'Farofa', id: 'farofa', quantidadeInicial: '...' },
     { nome: 'Maionese', id: 'maionese', quantidadeInicial: '...' },
     { nome: 'Vinagrete', id: 'vinagrete', quantidadeInicial: '...' },
+    { nome: 'Arroz', id: 'arroz', quantidadeInicial: '...' },
 ];
 // ARRAYS USADOS EM TABELAS.JS
 
@@ -58,6 +60,7 @@ const carnesSpan = {
 const bebidasSpan = {
     refrigerante: 'refrigeranteQuantidade',
     lata: 'lataQuantidade',
+    suco: 'sucoQuantidade',
     cerveja: 'cervejaQuantidade',
     agua: 'aguaQuantidade',
     gelo: 'geloQuantidade',
@@ -68,9 +71,10 @@ const acompanhamentosSpan = {
     farofa: 'farofaQuantidade',
     maionese: 'maioneseQuantidade',
     vinagrete: 'vinagreteQuantidade',
+    arroz: 'arrozQuantidade',
 };
 
-const fatoresMultiplicacaoCarne = {
+const fatoresMultiplicacaoCarnes = {
     picanha: {
         homem: 0.4,
         mulher: 0.32,
@@ -113,4 +117,63 @@ const fatoresMultiplicacaoCarne = {
     },
 };
 
+const fatoresMultiplicacaoBebidas = {
+    refrigerante: {
+        homem: 0.2,
+        mulher: 0.2,
+        crianca: 0.2,
+    },
+    lata: {
+        homem: 2,
+        mulher: 2,
+        crianca: 1,
+    },
+    suco: {
+        homem: 0.2,
+        mulher: 0.2,
+        crianca: 0.2,
+    },
+    cerveja: {
+        homem: 3,
+        mulher: 2,
+        crianca: 0,
+    },
+    agua: {
+        homem: 0.2,
+        mulher: 0.2,
+        crianca: 0.2,
+    },
+    gelo: {
+        homem: 0.1,
+        mulher: 0.1,
+        crianca: 0,
+    },
+}
+const fatoresMultiplicacaoAcompanhamentos = {
+    pao: {
+        homem: 1,
+        mulher: 1,
+        crianca: 1,
+    },
+    farofa: {
+        homem: 1,
+        mulher: 1,
+        crianca: 1,
+    },
+    maionese: {
+        homem: 1,
+        mulher: 1,
+        crianca: 1,
+    },
+    vinagrete: {
+        homem: 1,
+        mulher: 1,
+        crianca: 1,
+    },
+    arroz: {
+        homem: 1,
+        mulher: 1,
+        crianca: 1,
+    },
+}
 // ARRAYS USADOS NO CALCULATOR.JS

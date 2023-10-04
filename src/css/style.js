@@ -144,12 +144,12 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .input-group input[type="number"] {
-    width: 50px;
+    width: 80px;
     text-align: center;
     height: 80px;
     border: 0px;
     font-weight: bold;
-    font-size: 60px;
+    font-size: 70px;
     text-align: center
 }
 .input-group input[type="number"]:focus {

@@ -45,7 +45,7 @@ const calculator = function (){
         Object.keys(bebidasSpan).forEach((bebidaId) => {
             const spanId = bebidasSpan[bebidaId];
             const spanElement = document.getElementById(spanId);
-            spanElement.innerText = (resultados[bebidaId] === '...' || resultados[bebidaId] === 0) ? '...' : resultados[bebidaId].toFixed(2) + " Kg";
+            spanElement.innerText = (resultados[bebidaId] === '...' || resultados[bebidaId] === 0) ? '...' : Math.ceil(resultados[bebidaId]);
         });
     }
     
@@ -53,7 +53,7 @@ const calculator = function (){
         Object.keys(acompanhamentosSpan).forEach((acompanhamentoId) => {
             const spanId = acompanhamentosSpan[acompanhamentoId];
             const spanElement = document.getElementById(spanId);
-            spanElement.innerText = (resultados[acompanhamentoId] === '...' || resultados[acompanhamentoId] === 0) ? '...' : resultados[acompanhamentoId].toFixed(2) + " Kg";
+            spanElement.innerText = (resultados[acompanhamentoId] === '...' || resultados[acompanhamentoId] === 0) ? '...' : resultados[acompanhamentoId];
         });
     }
     
@@ -67,10 +67,8 @@ const calculator = function (){
             idsPessoas.forEach((pessoa) => {
                 const pessoaInput = document.getElementById(pessoa.id);
                 const pessoaValue = parseFloat(pessoaInput.value);
-                
                 const tipoPessoa = pessoa.id;
                 let fatorMultiplicacao = 0;
-
                 // Percorra os IDs das carnes para verificar quais estão marcados
                 Object.keys(carnesSpan).forEach((carneId) => {
                     const carneCheckbox = document.getElementById(carneId);
@@ -79,7 +77,7 @@ const calculator = function (){
                         if (!resultadosPorCarne[carneId]) {
                             resultadosPorCarne[carneId] = 0;
                         }
-                        const fatorCarne = fatoresMultiplicacaoCarne[carneId][tipoPessoa];
+                        const fatorCarne = fatoresMultiplicacaoCarnes[carneId][tipoPessoa];
                         resultadosPorCarne[carneId] += pessoaValue * fatorCarne;
                     } else {
                         // Se a caixa de seleção foi desmarcada, defina o resultado como '...'
@@ -95,7 +93,7 @@ const calculator = function (){
                         if (!resultadosPorBebida[bebidaId]) {
                             resultadosPorBebida[bebidaId] = 0;
                         }
-                        resultadosPorBebida[bebidaId] += pessoaValue * fatorMultiplicacao; // Aplica o fator de multiplicação apropriado
+                        resultadosPorBebida[bebidaId] += pessoaValue * fatoresMultiplicacaoBebidas[bebidaId][tipoPessoa];
                     } else {
                         resultadosPorBebida[bebidaId] = '...';
                     }
@@ -109,7 +107,7 @@ const calculator = function (){
                         if (!resultadosPorAcompanhamento[acompanhamentoId]) {
                             resultadosPorAcompanhamento[acompanhamentoId] = 0;
                         }
-                        resultadosPorAcompanhamento[acompanhamentoId] += pessoaValue * fatorMultiplicacao; // Aplica o fator de multiplicação apropriado
+                        resultadosPorAcompanhamento[acompanhamentoId] += pessoaValue * fatoresMultiplicacaoAcompanhamentos[acompanhamentoId][tipoPessoa]; 
                     } else {
                         resultadosPorAcompanhamento[acompanhamentoId] = '...';
                     }
@@ -120,10 +118,6 @@ const calculator = function (){
             atualizarSpansCarnes(resultadosPorCarne);
             atualizarSpansBebidas(resultadosPorBebida);
             atualizarSpansAcompanhamentos(resultadosPorAcompanhamento);
-    
-            console.log(resultadosPorCarne);
-            console.log(resultadosPorBebida);
-            console.log(resultadosPorAcompanhamento);
         };
     }
     
