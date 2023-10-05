@@ -1,14 +1,16 @@
 const styleContent = `
 :root {
-    --color-dark-mode: rgb(166, 247, 80);
+    --color-main-green: rgb(166, 247, 80);
 }
 
 .noite{
     background-image: url(./assets/background-dark.jpg); 
+    background-size: cover;
 }
 
 .dia{
     background-image: url(./assets/background-light.jpg); 
+    background-size: cover;
 }
 
 body {
@@ -31,15 +33,15 @@ footer {
 h1 {
     font-size: 74px;
     font-weight: 300;
-    color: var(--color-dark-mode);
+    color: var(--color-main-green);
     text-shadow: 2px 2px #000;
     text-align: center;
     margin-bottom: 50px;
 }
 
 h2 {
-    color: var(--color-dark-mode);
-    text-shadow: 2px 2px #000;
+    color: var(--color-main-green);
+    text-shadow: 1.6px 1.2px #000;
     margin-bottom: 30px;
     margin-top: 15px;
 }
@@ -55,6 +57,10 @@ form {
 
 tr > td:first-child {
     width: 300px;
+}
+
+body.noite td{
+    color: var(--color-main-green);
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -76,14 +82,24 @@ input[type="number"]::-webkit-outer-spin-button {
     text-align: center;
 }
 
-.container-resumo {
+body.noite .container-resumo {
     max-width: 800px;
     margin: 0 auto;
     margin-top: 30px;
     padding: 0px 20px;
     border-radius: 10px;
     text-align: center;
-    background-color: grey; //#DCDCDC
+    background-color: black;
+}
+
+body.dia .container-resumo {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 0px 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #DCDCDC;
 }
 
 .container-items{
@@ -113,11 +129,12 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 0px;
     width: 160px;
     padding: 0 6px 0 6px;
-    color: var(--color-dark-mode);
+    color: var(--color-main-green);
     border-width: 1px;
     border-style: solid;
     box-shadow: 1px 1px #000;
     background: transparent;
+    transition: border-color 0.3s;
 }
 
 .input-group label {
@@ -134,8 +151,8 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-bottom: 0;
     height: 50px;
     width: 100%;
-    color: var(--color-dark-mode);
-    text-shadow: 1.5px 1px #000;
+    color: var(--color-main-green);
+    text-shadow: 1px 0.5px #000;
     border-width: 1px;
     border-style: solid;
     box-shadow: 0px 1px #000;
@@ -162,7 +179,7 @@ input[type="number"]::-webkit-outer-spin-button {
     border-color: rgb(233, 64, 64);
 }
 .input-valid {
-    color: var(--color-dark-mode);
+    color: var(--color-main-green);
     text-shadow: 2px 1px #000;
     background: transparent;
 }
@@ -170,7 +187,6 @@ input[type="number"]::-webkit-outer-spin-button {
 .input-group .button-group {
     display: flex;
     justify-content: center;
-
 }
 
 .input-group button {
@@ -186,7 +202,7 @@ input[type="number"]::-webkit-outer-spin-button {
     border: none;
     text-decoration: none;
     outline: none;
-    background-color: var(--color-dark-mode);
+    background-color: var(--color-main-green);
     box-shadow: 2px 2px #000;
     color: #181C23;
     font-size: 34px;
@@ -195,6 +211,11 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 0px;
     margin: 10px 5px 0px 5px;
     width: 36px;
+    transition: background-color 0.3s;
+}
+
+.input-group__button--small:hover{
+    background-color: rgb(126, 186, 60);
 }
 
 .input-group__button--big{
@@ -203,7 +224,7 @@ input[type="number"]::-webkit-outer-spin-button {
     text-decoration: none;
     outline: none;
     background: transparent;
-    color: var(--color-dark-mode);
+    color: var(--color-main-green);
     text-shadow: 1.5px 1px #000;
     font-size: 34px;
     font-weight: bold;
@@ -211,6 +232,16 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 0px;
     margin: 10px 5px 0px 5px;
     width: 100%;
+    transition: color 0.3s;
+}
+
+.input-group .input-group__button--big:hover{
+    color: rgb(126, 186, 60);
+    border-style: rgb(126, 186, 60);
+}
+
+.button.input-group__button--big:hover + .input-group {
+    border-color: rgb(126, 186, 60); /* Altera a cor da borda da div no hover do botão */
 }
 
 #tema-button{
@@ -221,8 +252,8 @@ input[type="number"]::-webkit-outer-spin-button {
     border-radius: 4px;
     border-width: 1.5px;
     border-style: solid;
-    border-color: var(--color-dark-mode);
-    color: var(--color-dark-mode);
+    border-color: var(--color-main-green);
+    color: var(--color-main-green);
     text-shadow: 1.5px 1px #000;
     background: transparent;
     box-shadow: 1px 1px #000;
@@ -238,11 +269,11 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 #consent-label {
-    color: var(--color-dark-mode);
+    color: var(--color-main-green);
 }
 
 .input-form {
-    color: var(--color-dark-mode);
+    color: var(--color-main-green);
     width: 300px;
     text-align: center;
     height: 50px;
@@ -281,17 +312,43 @@ ul li input{
     visibility: hidden;
 }
 
-ul li label{
+body.noite ul li label{
     font-size: 14px;
     text-align: center;
     text-transform: uppercase;
-    color: var(--color-dark-mode);
+    color: var(--color-main-green);
+    text-shadow: 0.5px 0 black;
+    display: block;
+    border: 1px solid var(--color-main-green);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    box-shadow: 0px 1px #000;
+    transition: 0.2s all;
+    cursor: pointer;
+    transition: 0.3s;
+}
+body.noite ul li label:hover{
+    color: black;
+    background: var(--color-main-green);
+}
+
+body.dia ul li label{
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
     display: block;
     border: 1px solid black;
     padding: 0.5rem 1rem;
     border-radius: 50px;
+    box-shadow: 0px 1px #000;
     transition: 0.2s all;
     cursor: pointer;
+    transition: 0.3s;
+}
+body.dia ul li label:hover{
+    color: black;
+    background: var(--color-main-green);
 }
 
 ul li input:checked ~ label{
@@ -299,8 +356,8 @@ ul li input:checked ~ label{
     text-align: center;
     text-transform: uppercase;
     color: black;
-    background: var(--color-dark-mode);
-    border-color: var(--color-dark-mode);
+    background: var(--color-main-green);
+    border-color: var(--color-main-green);
     transition: 0.2s all;
 }
 `

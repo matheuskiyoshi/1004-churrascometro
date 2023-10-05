@@ -16,11 +16,11 @@ const footer = function (){
           emailInput.setAttribute("placeholder", "email@email.com");
           emailInput.classList.add("input-form");
 
-    const cityInput = document.createElement("input");
-          cityInput.setAttribute("type", "text");
-          cityInput.setAttribute("id", "city");
-          cityInput.setAttribute("placeholder", "Cidade");
-          cityInput.classList.add("input-form");
+    const cepInput = document.createElement("input");
+          cepInput.setAttribute("type", "text");
+          cepInput.setAttribute("id", "cep");
+          cepInput.setAttribute("placeholder", "CEP");
+          cepInput.classList.add("input-form");
 
     const divConsentInput = document.createElement("div");
           divConsentInput.setAttribute("id", "consent-input");
@@ -43,7 +43,7 @@ const footer = function (){
       footer.appendChild(formRegister);
       formRegister.appendChild(nameInput);
       formRegister.appendChild(emailInput);
-      formRegister.appendChild(cityInput);
+      formRegister.appendChild(cepInput);
       footer.appendChild(divConsentInput);
       divConsentInput.appendChild(consentInput);
       divConsentInput.appendChild(labelConsentInput);
@@ -52,10 +52,10 @@ const footer = function (){
       footer.addEventListener(events.REGISTER, function(){
             const name = nameInput.value;
             const email = emailInput.value;
-            const city = cityInput.value;
+            const cep = cepInput.value;
             const consentChecked = consentInput.checked;
           
-            if (name.trim() === '' || city.trim() === '' || !consentChecked) {
+            if (name.trim() === '' || cep.trim() === '' || !consentChecked) {
               alert('Por favor, preencha todos os campos obrigatórios e marque a caixa de consentimento.');
               return; 
             }
@@ -68,9 +68,17 @@ const footer = function (){
             const customer = {
               name: name,
               email: email,
-              city: city
+              cep: cep,
             };
-          
+
+            api.getAddressByPostalCode(cepInput.value)
+                  .then((response) =>  {
+                        localStorage.setItem("customer", JSON.stringify({...customer,response }));
+                  })
+                  .catch((error) => {
+                        console.log(error);
+                  })
+
             localStorage.setItem('customer', JSON.stringify(customer));
           
             footer.style.display = 'none';
