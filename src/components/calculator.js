@@ -15,7 +15,13 @@ const calculator = function (){
         const inputElement = document.getElementById(targetId);
         inputElement.value++;
         inputElement.setAttribute("value", inputElement.value);
+        
+        const spanId = targetId + 'Quantidade';
+        const spanElement = document.getElementById(spanId);
+        
+        spanElement.innerText = inputElement.value;
         console.log("RECEBIDO: " + events.INCREMENTAR);
+        sessionStorage.setItem(spanId, inputElement.value);
         sessionStorage.setItem(targetId, inputElement.value);
     });
 
@@ -23,9 +29,15 @@ const calculator = function (){
     calculator.addEventListener(events.DECREMENTAR, (event) => {
         var { targetId } = event.detail;
         const inputElement = document.getElementById(targetId);
-        if(inputElement.value > 0){
+        if (inputElement.value > 0) {
             inputElement.value--;
             inputElement.setAttribute("value", inputElement.value);
+
+            const spanId = targetId + 'Quantidade';
+            const spanElement = document.getElementById(spanId);
+
+            spanElement.innerText = inputElement.value;
+            sessionStorage.setItem(spanId, inputElement.value);
             sessionStorage.setItem(targetId, inputElement.value);
         }
         console.log("RECEBIDO: " + events.DECREMENTAR);
@@ -68,7 +80,6 @@ const calculator = function (){
                 const pessoaInput = document.getElementById(pessoa.id);
                 const pessoaValue = parseFloat(pessoaInput.value);
                 const tipoPessoa = pessoa.id;
-                let fatorMultiplicacao = 0;
                 // Percorra os IDs das carnes para verificar quais estão marcados
                 Object.keys(carnesSpan).forEach((carneId) => {
                     const carneCheckbox = document.getElementById(carneId);
@@ -146,6 +157,15 @@ const calculator = function (){
     
             if (elementoValue !== null && elemento) {
                 elemento.value = elementoValue;
+            }
+    
+            // Adicione os IDs dos spans correspondentes
+            const spanId = elementoId + 'Quantidade';
+            const spanValue = sessionStorage.getItem(spanId);
+            const spanElement = document.getElementById(spanId);
+    
+            if (spanValue !== null && spanElement) {
+                spanElement.innerText = spanValue;
             }
         }
     }
