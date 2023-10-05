@@ -121,9 +121,17 @@ const calculator = function (){
         };
     }
     
-    calculator.addEventListener(events.CALCULAR, (event) => {
-        calcularQuantidade(pessoas)();
-        console.log("DISPARADO: " + events.CALCULAR);
+    document.addEventListener('DOMContentLoaded', () => {
+        const footer = document.querySelector('footer'); 
+        calculator.addEventListener(events.CALCULAR, (event) => {
+          const footerDisplay = getComputedStyle(footer).display;
+          if (footerDisplay === 'none') {
+            calcularQuantidade(pessoas)();
+            console.log("DISPARADO: " + events.CALCULAR);
+          } else {
+            alert('Cadastre-se para poder utilizar o Churrascômetro.');
+          }
+        });
     });
         
 
