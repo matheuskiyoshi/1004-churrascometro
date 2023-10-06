@@ -72,6 +72,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 #container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .container-calculator {
