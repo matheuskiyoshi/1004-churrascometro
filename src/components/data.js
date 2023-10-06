@@ -46,12 +46,6 @@ const pessoas = [
     { id: 'crianca' },
 ];
 
-const pessoasSpan = {
-    homem: 'homemQuantidade',
-    mulher: 'mulherQuantidade',
-    crianca: 'criancaQuantidade',
-};
-
 const carnesSpan = {
     picanha: 'picanhaQuantidade',
     alcatra: 'alcatraQuantidade',

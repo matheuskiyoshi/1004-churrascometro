@@ -134,11 +134,21 @@ const calculator = function (){
     
     document.addEventListener('DOMContentLoaded', () => {
         const footer = document.querySelector('footer'); 
-        calculator.addEventListener(events.CALCULAR, (event) => {
+        calculator.addEventListener(events.CALCULAR, () => {
           const footerDisplay = getComputedStyle(footer).display;
           if (footerDisplay === 'none') {
-            calcularQuantidade(pessoas)();
-            console.log("DISPARADO: " + events.CALCULAR);
+            const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            const spans = document.querySelectorAll('table:not(:first-of-type) span');
+
+            if (checkedCheckboxes.length > 1) {
+                calcularQuantidade(pessoas)();
+                console.log("DISPARADO: " + events.CALCULAR);
+            } else {
+                spans.forEach(span => {
+                span.innerText = '...';
+                });
+                alert('Selecione pelo menos um item antes de calcular.');
+            }
           } else {
             alert('Cadastre-se para poder utilizar o Churrascômetro.');
           }
