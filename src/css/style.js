@@ -4,12 +4,12 @@ const styleContent = `
 }
 
 .noite{
-    background-image: url(./assets/background-dark.jpg); 
+    background-image: url(./src/assets/background-dark.jpg); 
     background-size: cover;
 }
 
 .dia{
-    background-image: url(./assets/background-light.jpg); 
+    background-image: url(./src/assets/background-light.jpg); 
     background-size: cover;
 }
 
