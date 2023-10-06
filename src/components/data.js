@@ -30,7 +30,7 @@ const dadosBebidas = [
 ];
 
 const dadosAcompanhamentos = [
-    { nome: 'Acompanhamentos - Porção de 100g' },
+    { nome: 'Acompanhamentos' },
     { nome: 'Pão de Alho', id: 'pao', quantidadeInicial: '...' },
     { nome: 'Farofa', id: 'farofa', quantidadeInicial: '...' },
     { nome: 'Maionese', id: 'maionese', quantidadeInicial: '...' },
@@ -76,44 +76,44 @@ const acompanhamentosSpan = {
 
 const fatoresMultiplicacaoCarnes = {
     picanha: {
-        homem: 0.4,
-        mulher: 0.32,
-        crianca: 0.2,
+        homem: 400,
+        mulher: 320,
+        crianca: 200,
     },
     alcatra: {
-        homem: 0.4,
-        mulher: 0.32,
-        crianca: 0.2,
+        homem: 400,
+        mulher: 320,
+        crianca: 200,
     },
     maminha: {
-        homem: 0.4,
-        mulher: 0.32,
-        crianca: 0.2,
+        homem: 400,
+        mulher: 320,
+        crianca: 200,
     },
     cupim: {
-        homem: 0.4,
-        mulher: 0.32,
-        crianca: 0.2,
+        homem: 400,
+        mulher: 320,
+        crianca: 200,
     },
     linguica: {
-        homem: 0.4,
-        mulher: 0.32,
-        crianca: 0.2,
+        homem: 400,
+        mulher: 320,
+        crianca: 200,
     },
     frango: {
-        homem: 0.35,
-        mulher: 0.28,
-        crianca: 0.18,
+        homem: 350,
+        mulher: 280,
+        crianca: 180,
     },
     costela: {
-        homem: 0.6,
-        mulher: 0.48,
-        crianca: 0.3,
+        homem: 600,
+        mulher: 480,
+        crianca: 300,
     },
     coracao: {
-        homem: 0.1,
-        mulher: 0.08,
-        crianca: 0.05,
+        homem: 100,
+        mulher: 80,
+        crianca: 50,
     },
 };
 
@@ -156,24 +156,24 @@ const fatoresMultiplicacaoAcompanhamentos = {
         crianca: 1,
     },
     farofa: {
-        homem: 1,
-        mulher: 1,
-        crianca: 1,
+        homem: 100,
+        mulher: 100,
+        crianca: 100,
     },
     maionese: {
-        homem: 1,
-        mulher: 1,
-        crianca: 1,
+        homem: 100,
+        mulher: 100,
+        crianca: 100,
     },
     vinagrete: {
-        homem: 1,
-        mulher: 1,
-        crianca: 1,
+        homem: 100,
+        mulher: 100,
+        crianca: 100,
     },
     arroz: {
-        homem: 1,
-        mulher: 1,
-        crianca: 1,
+        homem: 100,
+        mulher: 100,
+        crianca: 100,
     },
 }
 // ARRAYS USADOS NO CALCULATOR.JS

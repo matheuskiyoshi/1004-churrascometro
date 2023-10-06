@@ -66,7 +66,11 @@ const calculator = function (){
                 }
     
                 const valorCarne = resultados[carneId] / divisor;
-                spanElement.innerText = valorCarne.toFixed(2) + " Kg";
+                if (valorCarne >= 1000) {
+                    spanElement.innerText = (valorCarne / 1000).toFixed(1) + " kg";
+                } else {
+                    spanElement.innerText = valorCarne.toFixed(0) + " g";
+                }
             }
         });
     }
@@ -83,9 +87,25 @@ const calculator = function (){
         Object.keys(acompanhamentosSpan).forEach((acompanhamentoId) => {
             const spanId = acompanhamentosSpan[acompanhamentoId];
             const spanElement = document.getElementById(spanId);
-            spanElement.innerText = (resultados[acompanhamentoId] === '...' || resultados[acompanhamentoId] === 0) ? '...' : resultados[acompanhamentoId];
+    
+            if (resultados[acompanhamentoId] === '...' || resultados[acompanhamentoId] === 0) {
+                spanElement.innerText = '...';
+            } else {
+                const valorAcompanhamento = resultados[acompanhamentoId];
+    
+                if (acompanhamentoId === 'pao') {
+                    spanElement.innerText = valorAcompanhamento.toFixed(0);
+                } else {
+                    if (valorAcompanhamento >= 1000) {
+                        spanElement.innerText = (valorAcompanhamento / 1000).toFixed(1) + " kg";
+                    } else {
+                        spanElement.innerText = valorAcompanhamento.toFixed(0) + " g";
+                    }
+                }
+            }
         });
     }
+    
     
     function calcularQuantidade(idsPessoas) {
         return function() {
