@@ -242,12 +242,12 @@ body.dia .container-resumo {
 }
 
 .button.input-group__button--big:hover + .input-group {
-    border-color: rgb(126, 186, 60); /* Altera a cor da borda da div no hover do botão */
+    border-color: rgb(126, 186, 60);
 }
 
 #tema-button{
     font-size: 20px;
-    position: absolute;
+    position: fixed;
     right: 10px;
     top: 10px;
     border-radius: 4px;
@@ -259,6 +259,12 @@ body.dia .container-resumo {
     background: transparent;
     box-shadow: 1px 1px #000;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+#tema-button:hover{
+    color: rgb(126, 186, 60);
+    boder-color: rgb(126, 186, 60);
 }
 
 #consent-input {

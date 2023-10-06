@@ -14,11 +14,18 @@ O Churrascômetro é uma aplicação web que permite calcular a quantidade de ca
 - Calcular a quantidade necessária de carne com base nas escolhas feitas.
 - Calcular a quantidade necessária de bebidas.
 - Exibir os resultados ao usuário de forma clara e intuitiva.
+- Ter um botão para mudança de tema escuro e claro.
+- Exibir um formulário para cadastro antes de poder fazer o cálculo.
+- Utilizar uma api externa.
 
 ### Tecnologias Utilizadas
 - HTML5
 - CSS3
 - JavaScript (Manipulação do DOM)
+
+### Deploy
+
+https://matheuskiyoshi.github.io/1004-churrascometro/
 
 ### Contato
 Matheus Kiyoshi Silva Alimura  
