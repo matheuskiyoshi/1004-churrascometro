@@ -46,10 +46,28 @@ const calculator = function (){
     // EVENTO DE CALCULAR E MODIFICAR OS SPANS
     
     function atualizarSpansCarnes(resultados) {
+        const checkboxesMarcadas = Object.keys(carnesSpan).filter((carneId) => {
+            const carneCheckbox = document.getElementById(carneId);
+            return carneCheckbox.checked;
+        });
+    
         Object.keys(carnesSpan).forEach((carneId) => {
             const spanId = carnesSpan[carneId];
             const spanElement = document.getElementById(spanId);
-            spanElement.innerText = (resultados[carneId] === '...' || resultados[carneId] === 0) ? '...' : resultados[carneId].toFixed(2) + " Kg";
+    
+            if (resultados[carneId] === '...' || resultados[carneId] === 0) {
+                spanElement.innerText = '...';
+            } else {
+                let divisor = 1;
+                if (checkboxesMarcadas.length === 2) {
+                    divisor = 2;
+                } else if (checkboxesMarcadas.length > 2) {
+                    divisor = 4;
+                }
+    
+                const valorCarne = resultados[carneId] / divisor;
+                spanElement.innerText = valorCarne.toFixed(2) + " Kg";
+            }
         });
     }
     
