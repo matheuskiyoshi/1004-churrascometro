@@ -175,10 +175,10 @@ const calculator = function (){
         containerCalculadora.addEventListener(events.CALCULAR, () => {
           const footerDisplay = getComputedStyle(footer).display;
           if (footerDisplay === 'none') {
-            const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            const containerCalculator = document.querySelector(".container-calculator");
+            const checkedCheckboxes = containerCalculator.querySelectorAll('input[type="checkbox"]:checked');
             const spans = document.querySelectorAll('table:not(:first-of-type) span');
-
-            if (checkedCheckboxes.length > 1) {
+            if (checkedCheckboxes.length >= 1) {
                 calcularQuantidade(pessoas)();
                 console.log("DISPARADO: " + events.CALCULAR);
             } else {
