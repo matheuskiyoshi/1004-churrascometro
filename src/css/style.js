@@ -26,6 +26,7 @@ body {
     margin-bottom: 200px;
     padding: 0;
     background-color: #181C23;
+    transition: background 0.3s ease-in-out;
 }
 
 footer {
@@ -252,21 +253,48 @@ body.dia .container-resumo {
     border-color: rgb(126, 186, 60);
 }
 
-#tema-button{
-    font-size: 20px;
-    position: fixed;
-    right: 10px;
-    top: 10px;
-    border-radius: 4px;
-    border-width: 1.5px;
-    border-style: solid;
-    border-color: var(--color-main-green);
-    color: var(--color-main-green);
-    text-shadow: 1.5px 1px #000;
-    background: transparent;
-    box-shadow: 1px 1px #000;
-    cursor: pointer;
-    transition: 0.3s;
+#containerTema{
+    position: absolute;
+    right: 25px;
+    top: 20px;
+}
+
+#temaCheckbox{
+    display: none;
+}
+
+.toggle{
+  height: 30px;
+  width: 60px;
+  border-radius: 99px;
+  background-image: url(./src/assets/background-light.jpg);
+  background-size: cover;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 6px 6px 10px #0000003d;
+}
+
+#temaCheckbox:checked + .toggle {
+    background-image: url(./src/assets/background-dark.jpg);
+    background-size: cover;
+}
+
+.toggle::before {
+    content: "";
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+    background-color: var(--color-main-green);
+    box-shadow: 1px 1px black;
+    transition: all 0.3s ease-in-out;
+}
+
+#temaCheckbox:checked + .toggle::before {
+    position: absolute;
+    left: calc(100% - 20px);
 }
 
 #tema-button:hover{
@@ -385,6 +413,16 @@ ul li input:checked ~ label{
     #container {
         flex-direction: column;
         aling-items: flex-start;
+    }
+
+    .container-resumo {
+        min-width: 370px;
+    }
+
+    #containerTema{
+        position: absolute;
+        left: 540px;
+        top: 20px
     }
 }
 `
