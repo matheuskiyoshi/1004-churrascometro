@@ -11,6 +11,7 @@ const containerCalculadora = document.querySelector(".container-calculator");
 containerCalculadora.appendChild(items(dadosCarnes));
 containerCalculadora.appendChild(items(dadosBebidas));
 containerCalculadora.appendChild(items(dadosAcompanhamentos));
+containerCalculadora.appendChild(calculateButton());
 
 let imagemAtual = 'noite';
 

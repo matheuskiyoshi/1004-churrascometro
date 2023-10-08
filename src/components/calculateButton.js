@@ -6,7 +6,7 @@ const calculateButton = function(){
     };
 
     const calculateButtonRow = document.createElement("div");
-    calculateButtonRow.classList.add("row");
+    calculateButtonRow.classList.add("container-button");
 
     const buttonCalculateInputGroup = document.createElement("div");
             buttonCalculateInputGroup.classList.add("input-group");

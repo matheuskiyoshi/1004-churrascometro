@@ -10,7 +10,7 @@ const calculator = function (){
     displayRow.classList.add("row");
 
     // EVENTO DE INCREMENTO
-    calculator.addEventListener(events.INCREMENTAR, (event) => {
+    containerCalculadora.addEventListener(events.INCREMENTAR, (event) => {
         var { targetId } = event.detail;
         const inputElement = document.getElementById(targetId);
         inputElement.value++;
@@ -26,7 +26,7 @@ const calculator = function (){
     });
 
     // EVENTO DE DECREMENTO
-    calculator.addEventListener(events.DECREMENTAR, (event) => {
+    containerCalculadora.addEventListener(events.DECREMENTAR, (event) => {
         var { targetId } = event.detail;
         const inputElement = document.getElementById(targetId);
         if (inputElement.value > 0) {
@@ -172,7 +172,7 @@ const calculator = function (){
     
     document.addEventListener('DOMContentLoaded', () => {
         const footer = document.querySelector('footer'); 
-        calculator.addEventListener(events.CALCULAR, () => {
+        containerCalculadora.addEventListener(events.CALCULAR, () => {
           const footerDisplay = getComputedStyle(footer).display;
           if (footerDisplay === 'none') {
             const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
@@ -229,7 +229,7 @@ const calculator = function (){
     displayRow.appendChild(display("crianca", "Criança"));
 
     calculator.appendChild(displayRow);
-    calculator.appendChild(calculateButton());
+    // calculator.appendChild(calculateButton());
     
     containerCalculadora.appendChild(calculator);
     

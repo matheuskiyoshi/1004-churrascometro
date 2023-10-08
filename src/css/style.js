@@ -6,11 +6,19 @@ const styleContent = `
 .noite{
     background-image: url(./src/assets/background-dark.jpg); 
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
 }
 
 .dia{
     background-image: url(./src/assets/background-light.jpg); 
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
 }
 
 body {
@@ -194,8 +202,7 @@ body.dia .container-resumo {
     padding: 5px 10px;
     font-size: 16px;
     margin: 5px;
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
 
 .input-group__button--small{
@@ -366,6 +373,19 @@ ul li input:checked ~ label{
     background: var(--color-main-green);
     border-color: var(--color-main-green);
     transition: 0.2s all;
+}
+.container-button {
+    margin-top: 50px;
+    display:flex;
+    justify-content: center;
+
+}
+
+@media screen and (max-width: 640px) {
+    #container {
+        flex-direction: column;
+        aling-items: flex-start;
+    }
 }
 `
 const style = document.createElement("style");
